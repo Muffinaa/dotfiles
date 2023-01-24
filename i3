@@ -1,0 +1,1 @@
+/home/muffina/.config/i3/

@@ -19,7 +19,7 @@ Some info
 
 ### Corner sit
 
-[Gif preview here](Here)
+![cheeseburger](https://github.com/Muffinaa/dotfiles/blob/main/assets/CornerSit.gif)
 
 `Mod` + `Numpad<1...9>`
 Send to different corner

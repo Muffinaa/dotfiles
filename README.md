@@ -1,9 +1,9 @@
 
 # <div align=center> Dotfiles </div>
 
-[Shields](https://img.shields.io/github/stars/muffinaa/dotfiles)
+![Shields](https://img.shields.io/github/stars/muffinaa/dotfiles)
 
-[Screenshot](https://github.com/Muffinaa/dotfiles/blob/main/assets/screenshots/cheesburger.png)
+![Screenshot](https://github.com/Muffinaa/dotfiles/blob/main/assets/screenshots/cheesburger.png)
 
 Simple setup, nothing much. Very minimalistic.
 

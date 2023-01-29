@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
+    use 'elkowar/yuck.vim'
     -- Auto pairs
     use {
         "windwp/nvim-autopairs",
@@ -62,4 +63,6 @@ return require('packer').startup(function(use)
     }
     -- Discord rich presence
     use 'andweeb/presence.nvim'
+    -- Markdown preview
+    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 end)

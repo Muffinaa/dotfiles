@@ -8,7 +8,6 @@
 #        Amount of time I spent on this shit is ridiculous
 #                         by Muffina#1226
 #
-
 # ((( Core settings
 
   set $mod Mod4
@@ -43,7 +42,7 @@
   bindsym $mod+Return exec --no-startup-id alacritty
 
   # Open dmenu
-  bindsym $mod+d exec --no-startup-id dmenu_run -p "Run" -l 15
+  bindsym $mod+d exec --no-startup-id dmenu_run -p "Run" -l 10
 
   # Start a Web Browser
   bindsym $mod+b exec --no-startup-id qutebrowser
@@ -57,6 +56,18 @@
   # Make a screenshot 
   bindsym Print exec --no-startup-id scrot 'Pictures/Screenshots/%Y-%m-%d_$wx$h.png'
   bindsym Shift+Print exec --no-startup-id scrot --select --delay 1 'Pictures/Screenshots/%Y-%m-%d_$wx$h.png' 
+
+  # Send window to corners/sides
+  bindsym $mod+KP_Home exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh top-left
+  bindsym $mod+KP_Up exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh top
+  bindsym $mod+KP_Prior exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh top-right
+  bindsym $mod+KP_Left exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh left
+  bindsym $mod+KP_Begin exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh center
+  bindsym $mod+KP_Right exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh right
+  bindsym $mod+KP_End exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh bottom-left
+  bindsym $mod+KP_Down exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh bottom
+  bindsym $mod+KP_Next exec --no-startup-id bash $HOME/.config/i3/corner-sit.sh bottom-right 
+
 
 #)))
 
@@ -180,10 +191,17 @@
   for_window [class="dropdown"] floating enable
   for_window [class="dropdown"] resize set 728 575
   for_window [class="dropdown"] move scratchpad
-  for_window [class="dropdown"] border pixel 4
+  for_window [class="dropdown"] border pixel 2
   exec --no-startup-id alacritty --class dropdown 
 
 #)))
+
+# ((( Window rules
+
+  for_window [title="Friends List"] floating enable
+  for_window [title="Friends List"] resize set 445 645
+
+# )))
 
 #((( Auto start programs
 
@@ -193,15 +211,29 @@
   # Restore last wallpaper set using nitrogen
   exec --no-startup-id nitrogen --restore &
 
+  # Status bar
+  exec --no-startup-id polybar &
+
   # Compositor
   exec --no-startup-id picom &
 
   # Cursor fix
   exec --no-startup-id xsetroot -cursor_name left_ptr
 
+  # Notification daemon
+  exec --no-startup-id dunst &
+    # Notifications for mpd
+    exec --no-startup-id mpd-notification &
+
   # Conky widgets
   # Too lazy to convert it to nord colorscheme
   # exec --no-startup-id conky -c $HOME/.config/conky/mocha.conf &
+  
+  # Terminal waiting for me
+
+  for_window [class="welcome"] floating enable
+  for_window [class="welcome"] resize set 500 500
+  exec --no-startup-id alacritty --class welcome 
 
 # )))
 

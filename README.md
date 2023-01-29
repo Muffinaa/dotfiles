@@ -3,7 +3,7 @@
 
 [Shields](https://img.shields.io/github/stars/muffinaa/dotfiles)
 
-[Screenshot]()
+[Screenshot](https://github.com/Muffinaa/dotfiles/blob/main/assets/screenshots/cheesburger.png)
 
 Simple setup, nothing much. Very minimalistic.
 
